@@ -1,0 +1,297 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    border: 2px solid #ccc;
+    padding: 5px 10px;
+    background-color: #f9f9f9;
+    transition: width 0.4s ease;
+    /* Hiệu ứng chuyển động khi thay đổi kích thước */
+    width: 200px;
+    /* Kích thước mặc định */
+}
+
+.search-bar.expanded {
+    width: 500px;
+    /* Kích thước khi mở rộng */
+}
+
+.search-bar input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 5px;
+    flex: 1;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: opacity 0.4s ease;
+    /* Hiệu ứng chuyển động cho độ mờ */
+}
+
+.search-bar button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 5px;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+.icons span {
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 10px 20px;
+    background-color: #f7f7f7;
+    margin: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+aside {
+    width: 200px;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 15px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+    /* Thêm khoảng cách xung quanh chữ và hiệu ứng chuyển động */
+}
+
+.hot {
+    font-size: 12px;
+    padding: 2px 5px;
+    margin-left: 5px;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.hot {
+    background-color: red;
+}
+
+
+/* CSS cho submenu */
+
+.submenu {
+    display: none;
+    /* Ẩn submenu ban đầu */
+    position: absolute;
+    top: 0;
+    /* Hiện tại cùng một vị trí theo chiều dọc */
+    left: 100%;
+    /* Hiện tại bên phải của dấu "+" */
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    /* Ngăn ngắt dòng */
+}
+
+
+/* CSS cho hiệu ứng khi mục con được chọn */
+
+.submenu li.selected {
+    color: #dc3545;
+    /* Màu khi được chọn */
+    font-weight: bold;
+    /* Để làm nổi bật mục con được chọn */
+}
+
+.toggle-submenu {
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    padding: 20px;
+}
+
+.image-section {
+    flex: 1;
+}
+
+.text-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.text-section h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.text-section p {
+    font-size: 18px;
+    color: #555;
+}
+
+nav ul li {
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    transform: scale(1.1);
+    /* Phóng to chữ khi hover */
+    color: #007bff;
+    /* Thay đổi màu chữ khi hover */
+}
+
+nav ul li:active {
+    transform: scale(1.1);
+    /* Phóng to chữ khi click */
+    color: #0056b3;
+    /* Màu chữ khi click */
+}
+
+
+/* CSS cho hiệu ứng hover */
+
+aside ul li:hover {
+    background-color: #ffffff;
+    /* Phông nền trắng khi hover */
+    color: #007bff;
+    /* Màu chữ khi hover */
+    cursor: pointer;
+}
+
+aside ul li:hover .toggle-submenu {
+    color: #007bff;
+    /* Màu của dấu + khi hover */
+}
+
+
+/* CSS cho hiệu ứng khi được chọn */
+
+aside ul li.selected {
+    color: #dc3545;
+    /* Màu khi được click */
+    cursor: pointer;
+}
+
+
+/* Ẩn danh sách con mặc định */
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+}
+
+aside ul li:hover .submenu {
+    display: block;
+}
+
+aside ul li {
+    position: relative;
+    padding-right: 15px;
+    background-color: #f1f1f1;
+    /* Phông nền mặc định */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+aside ul li:hover {
+    background-color: #ffffff;
+    /* Phông nền khi hover */
+    transform: translateX(10px);
+    /* Di chuyển thụt vào khi hover */
+}
+
+aside ul li.selected {
+    color: #dc3545;
+    /* Màu khi được click */
+    cursor: pointer;
+}
+
+
+/* CSS cho nút "Bắt đầu học" */
+
+#start-learning {
+    background-color: #007bff;
+    border: none;
+    border-radius: 50px;
+    /* Bo tròn nút thành hình tròn */
+    color: white;
+    padding: 15px 30px;
+    /* Tăng kích thước nút */
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* Chữ in hoa */
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Thêm bóng cho nút */
+}
+
+#start-learning:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Tăng độ đổ bóng khi hover */
+}
+
+#start-learning:active {
+    transform: scale(0.98);
+    /* Hiệu ứng nhấn nút khi click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Giảm độ đổ bóng khi nhấn */
+}
+
+#start-learning:focus {
+    outline: none;
+    /* Loại bỏ viền khi nút được chọn */
+}
